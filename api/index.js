@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Servidor funcionando!");
+});
+
 app.post("/webhook", (req, res) => {
     const payload = req.body;
     console.log("Webhook recebido:", payload);
